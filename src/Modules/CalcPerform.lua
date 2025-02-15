@@ -2042,7 +2042,7 @@ function calcs.perform(env, skipEHP)
 			end
 		end
 		if activeSkill.skillModList:Flag(nil, "Condition:CanWither") or (activeSkill.minion and env.minion and env.minion.modDB:Flag(nil, "Condition:CanWither")) then
-			local effect = activeSkill.minion and 5 or m_floor(5 * (1 + modDB:Sum("INC", nil, "WitherEffect") / 100))
+			local effect = activeSkill.minion and 5 or m_floor(5 * ((100 + modDB:Sum("INC", nil, "WitherEffect")) / 100))
 			modDB:NewMod("WitherEffectStack", "MAX", effect)
 		end
 		if activeSkill.skillModList:Flag(nil, "ApplyCriticalWeakness") then
